@@ -1,5 +1,6 @@
 # Process-Watcher
 shitty process watcher
+I can't be bothered to modify this for public usage, so enjoy kato src and hf figuring it out
 
 usage: 
 
@@ -22,5 +23,16 @@ usage:
 
                 Watcher.Auto();
             });
+        }
+        
+        public void Inject()
+        {
+            if (!AutoInjectToggle && !Watcher.GetProcess())
+            {
+                MessageBox.Show("Please launch roblox first!", "Kato", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                return;
+            }
+
+            Process roblox = Watcher.Process;
         }
 ```
